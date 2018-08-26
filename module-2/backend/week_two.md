@@ -1,6 +1,6 @@
 ## Week Two - Module 2 Recap
 
-Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!). 
+Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!).
 
 Note: When you're done, submit a PR.
 
@@ -8,50 +8,89 @@ Note: When you're done, submit a PR.
 ### Week 2 Questions
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+```
+ActiveRecord is an ORM (Object Relational Mapper).  It allows us interact with our database.
+```
 2. Assume you have the following model:
-
 ```ruby
-class Team << ActiveRecord::Base
+class Team < ActiveRecord::Base
 end
 ```
-
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
-
+```
+Team.all, Team.find, Team.find_by - These are inherited from ActiveRecord
+```
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
-
+```
+Team.find(4); Team.find_by(:owner_id)
+```
 4. Assume that you added a line to your `Team` class as follows:
-
 ```ruby
 class Team << ActiveRecord::Base
   belongs_to :owner
 end
 ```
-
 Now how would you find the owner of the team with an id of 4?
-
+```
+Owner.team.find(4)
+```
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
+```
+students belong to teachers
+```
 6. Define foreign key, primary key, and schema.
+```
+foreign key: the primary key from another table; primary key: the unique identifier of row in your table proper; schema: the overall blue print of all the tables in your database and the relationships between them
+```
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
-8. What are the parts of an HTTP response?
+```
+Primary key defines the name of the database field to be used as primary key instead of the default id.
 
+Foreign key defines the name of the database field which keeps references to the primary key field of another model
+```
+8. What are the parts of an HTTP response?
+```
+Protocol/Version, Status Code, and its Description - the very first line of a valid HTTP Response is consists of the protocol name, it's version, status code of the request, and a short description of the status code.
+
+HTTP Response Headers - HTTP Response Headers contain information about the environment of the server machine (HTTP Request Headers contain information about the environment of the client machine).
+
+HTTP Response Body - this the actual response which is rendered in the client window (the browser window). The content of the body will be HTML code.
+```
 
 ### Optional Questions
-
 1. Name your five favorite ActiveRecord methods (i.e. methods your models inherit from ActiveRecord) and describe what they do.
+```
+```
 2. Name your three favorite ActiveRecord rake tasks and describe what they do.
+```
+```
 3. What two columns does `t.timestamps null: false` create in our database?
+```
+```
 4. In a database that's holding schools and teachers, what will be the relationship between schools and teachers?
+```
+```
 5. In the same database, what will you need to do to create this relationship (draw a schema diagram)?
+```
+```
 6. Give an example of when you might want to store information besides ids on a join table.
+```
+```
 7. Describe and diagram the relationship between patients and doctors.
+```
+```
 8. Describe and diagram the relationship between museums and original_paintings.
+```
+```
 9. What could you see in your code that would make you think you might want to create a partial?
+```
+```
 
 ### Self Assessment:
 Choose One:
 * I was able to answer every question without relying on outside resources
 * I was able to answer most questions independently, but utilized outside resources for a few
-* I was able to answer a few questions independently, but relied heavily on outside resources 
+* I was able to answer a few questions independently, but relied heavily on outside resources
 
 Choose One:
 * I feel confident about the content presented this week
