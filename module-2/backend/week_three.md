@@ -11,14 +11,15 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 
 1. What is the entry at the command line to create a new rails app?
 ```
-rails new
+rails new project_name -T -d="postgresql" --skip-spring --skip-turbolinks
 ```
 2. What do Models generally inherit from in rails?
 ```
-Action pack (Application Controller, Application Record)?
+ApplicationRecord
 ```
 3. What do Controllers generally inherit from in a rails project?
 ```
+ApplicationController
 ```
 4. How would I create a route if I wanted to see a specific horse in my routes file assuming I'm sticking to standard conventions and that I didn't want other CRUD functionality?
 ```
@@ -30,39 +31,49 @@ rails routes - all the available routes
 ```
 6. What is an example of a route helper? When would you use them?
 ```
-link_to "Link Name", things_path - When wouldn't you use them?
+horses_path
 ```
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
 ```
-No clue
+url = the absolute path (https://localhost:3000/horses)
+path = the relative path (/horses)
 ```
 8. What are strong params and why are they necessary?
 ```
-strong params hide important information from the rest of the program, and from users; the keep unwanted information out, and sensitive information in.
+They protect our application from user-end attribute assignment.
 ```
 9. What role does `form_for` play in helping us create our forms?
 ```
-automated form templates so we don't have to write as much html
+Sets up the html for our form easily.
 ```
 10. How does `form_for` know where to submit the user's input?
 ```
-Voodoo
+It is based on the first argument after form_for. Rails interprets the route based on this argument.
 ```
 11. Create a form using a `form_for` helper to create a new `Horse`.
 ```
 
-form_for @horse do |f|
-  f.label :name
-  f.text_field :name
-  f.submit
-end
+<%= form_for @horse do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field:name %>
+    <%= f.submit %>
+  <% end %>
 ```
 12. Why do we want to validate our models?
 ```
-to make sure necessary information is reaching our model
+Ensures that only valid data is saved to our database.
 ```
 13. What are the steps of the DNS lookup?
 ```
+1. Client side request to server
+2. Server sends to ActionPack
+3. ActionPack sends through controller to model
+4. Model queries db
+5. Model sends query data back to ActionPack
+6.ActionPack/Controller send to View to collect html
+7. View sends back to Controller
+8. ActionPack combines data and html into one package and sends to server
+9. Server sends response back to client's browser
 ```
 
 ### Review Questions
@@ -74,10 +85,11 @@ to make sure necessary information is reaching our model
   `
 
 ```
+
 ```
 15. How would you call the method `prance` from within the method `move` on a `Horse` instance?
 ```
-?
+
 ```
 16. Given the following hash:
 
@@ -90,6 +102,7 @@ furniture[:table][:height] vs furniture[:purchased]
 ```
 17. What is inheritance?
 ```
+ Inheritance is when a class inherits behavior from another class
 ```
 
 ### Self Assessment:
