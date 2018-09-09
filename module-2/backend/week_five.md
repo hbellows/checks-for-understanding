@@ -22,11 +22,9 @@ Note: When you're done, submit a PR.
 ```
 6. What do each of the following tags do?
 ```ruby
-<%= stylesheet_link_tag "application" %>
-<%= javascript_include_tag "application" %>
-<%= image_tag "rails.png" %>
-```
-```
+<%= stylesheet_link_tag "application" %> => Creates a link to app/assets/stylesheet - It embeds a call to the CSS stylesheet
+<%= javascript_include_tag "application" %> => Creates a link
+<%= image_tag "rails.png" %> => Creates a link to app/assets/images - It embeds a link to an image in the HTML file
 ```
 7. What are some of the elements of a great read me? What are some of the benefits of taking the time to update a readme for our project?
 ```
@@ -58,7 +56,7 @@ User.create(name: "Happy", active: true)
 12b. How would you increase the quantity of item 29?  
 12c. How would you find out how many items your user is thinking about purchasing?  
 ```
-``` 
+```
 13. What is polymorphism? How does it relate to duck-typing? What are two ways you use this in everyday Rails applications?
 ```
 ```
@@ -68,12 +66,7 @@ User.create(name: "Happy", active: true)
 
 ### Self Assessment:
 Choose One:
-* I was able to answer every question without relying on outside resources
 * I was able to answer most questions independently, but utilized outside resources for a few
-* I was able to answer a few questions independently, but relied heavily on outside resources
 
 Choose One:
-* I feel confident about the content presented this week
 * I feel comfortable with the content presented this week
-* I feel overwhelmed by the content presented this week
-* I feel quite lost by the content presented this week

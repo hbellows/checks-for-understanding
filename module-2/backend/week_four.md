@@ -69,7 +69,7 @@ At a high level, authorization requires:
 ```
 11. What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?
 ```
-Your database needs an interger column.  We would declare the enum in the model.
+Your database needs an integer column.  We would declare the enum in the model.
 ```
 12. What are some strategies you can use to keep your views DRY?
 ```
@@ -86,9 +86,20 @@ We can use partial forms.
 ]
 ```  
 ```
+array.map do |hash|
+  hash.map do |key, value|
+    hash.keys
+  end
+end.sort
 ```
 14. How would you clean incoming data to ensure "$300" or "300.00" is stored as 300?
 ```
+number = "$300"
+number.gsub(/[^\d\.-]/,'').to_i
+
+<!-- note to self: the - at the end of the regex preserves negative numbers:
+number = "-$300.50"
+number.gsub(/[^\d\.-]/,'').to_i = -300 -->
 ```
 ### Self Assessment:
 Choose One:
