@@ -87,9 +87,7 @@ We can use partial forms.
 ```  
 ```
 array.map do |hash|
-  hash.map do |key, value|
-    hash.keys
-  end
+  hash[:holiday][:name]
 end.sort
 ```
 14. How would you clean incoming data to ensure "$300" or "300.00" is stored as 300?
